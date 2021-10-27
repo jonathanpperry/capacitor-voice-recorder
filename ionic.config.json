@@ -1,0 +1,7 @@
+{
+  "name": "whatsappVoice",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
