@@ -50,9 +50,21 @@ export class HomePage implements OnInit {
           path: fileName,
           directory: Directory.Data,
           data: recordData,
-          
         });
       }
     });
+  }
+
+  async playFile(fileName) {
+    const audioFile = await Filesystem.readFile({
+      path: fileName,
+      directory: Directory.Data,
+    });
+
+    const base64Sound = audioFile.data;
+
+    const audioRef = new Audio(`data:audio/aac;base64,${base64Sound}`);
+    audioRef.oncanplaythrough = () => audioRef.play();
+    audioRef.load();
   }
 }

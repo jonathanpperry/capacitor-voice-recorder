@@ -9,6 +9,8 @@
   <ion-button (click)="stopRecording()" expand="full">Stop</ion-button>
 
   <ion-list>
-    <ion-item *ngFor="let f of storedFileNames"> {{f}} </ion-item>
+    <ion-item *ngFor="let f of storedFileNames" (click)="playFile(f)">
+      {{f}}
+    </ion-item>
   </ion-list>
 </ion-content>
